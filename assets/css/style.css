@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap');
+
+
+:root{
+    --red:hsl(0, 100%, 68%);
+    --veryDarkBlue:hsl(230, 29%, 20%);
+    --darkGrayishBlue:hsl(230, 11%, 40%);
+    --grayishBlue:hsl(231, 7%, 65%);
+    --lightGrayishBlue:hsl(207, 33%, 95%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.page{
+    padding: 2rem;
+    font-family: 'Barlow',sans-serif;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+
+/*NAVBAR*/
+
+.navbar{
+    height: 20vh;
+}
+
+nav{
+    position:relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#btn-close{
+    display: none;
+}
+
+.nav-links{
+    display: none;
+    flex-direction:column;
+    align-items:center;
+    position:absolute;
+    top:70px;
+    width: 100%;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 5px #000;
+    text-align: center;    
+}
+
+.nav-links ul li{
+    list-style: none;
+    
+}
+
+.nav-links ul li a{
+    color:var(--veryDarkBlue);
+    font-size:1.5rem;
+    font-family: 'Barlow Condensed',sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links ul li:nth-child(1),.nav-links ul li:nth-child(2){
+    margin-bottom: 1rem;
+}
+
+.nav-links button{
+    background:none;
+    border:none;
+    color:var(--grayishBlue);
+    font-family: 'Barlow Condensed',sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.nav-links ul li a:hover,.nav-links button:hover{
+    text-decoration: underline;
+}
+
+hr{
+    height: 2px;
+    width: 100%;
+    background-color: var(--grayishBlue);
+    margin: 1rem 0;
+}
+
+@keyframes animationOpen{
+    0%{
+        left: -500%;
+    }
+
+    100%{
+        left: 0;
+    }
+
+}
+
+@keyframes animationClose{
+   0%{
+        left: 0;
+   }
+
+   100%{
+        left: -500%;
+   }
+}
+
+/*COMPUTER*/
+
+.computer{
+    height: 40vh;
+    background-image: url('../img/illustration-devices.svg');
+    background-size: cover;
+}
+
+
+/*HEADING*/
+
+.heading{
+    height: 40vh;
+    margin-top: 3rem;
+}
+
+.heading h1{
+    text-transform: uppercase;
+    font-family: 'Barlow Condensed',sans-serif;
+    font-size:2.5rem;
+    font-weight: 700;
+    color: var(--veryDarkBlue);
+    margin-top: 1rem;
+}
+
+.heading__p{
+    color: var(--darkGrayishBlue);
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.heading__sub{
+    display: flex;
+    align-items: center;
+    font-family: 'Barlow Condensed',sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.heading__sub span{
+    padding: 0.2rem 0.7rem;
+    background: var(--veryDarkBlue);
+    color: #fff;
+    border-radius: 15px;
+}
+
+.heading__sub p{
+    color: var(--grayishBlue);
+    font-weight: 400;
+    margin-left: 1rem;
+    letter-spacing: 5px;
+}
+
+.heading__buttons button{
+    font-size:1rem;
+    font-family: 'Barlow Condensed',sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.heading__buttons button:nth-child(1){
+    background-color: var(--red);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.heading__buttons button:nth-child(2){
+    border: none;
+    background: none;
+    color: var(--grayishBlue);
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.heading__buttons button:nth-child(1):hover{
+    opacity: .8;
+}
+
+
+@media screen and (min-width:800px) {
+    .page{
+       display: grid;
+       justify-content: center;
+       align-items: center;
+       grid-template-columns: repeat(2,1fr);
+    }
+
+
+    .navbar{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    #btn-burger{
+        display: none;
+    }
+
+
+    hr{
+        height: 5px;
+        width:5px;
+        border-radius: 50%;
+        margin:0 3rem;
+    }
+
+    .nav-links{
+        display: flex;
+        flex-direction: row;
+        justify-content:right;
+        align-items: center;
+        position:static;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .nav-links ul{
+        display: flex;
+    }
+
+    .nav-links ul li{
+        margin-left: 2rem;
+    }
+
+    .nav-links ul li a{
+        font-size:1rem; 
+    }
+
+    .nav-links ul li:nth-child(1),.nav-links ul li:nth-child(2){
+        margin-bottom:0;
+    }
+
+    .nav-links button{
+        font-size: 1rem;
+    }
+
+    .computer{
+        order: 2;
+        height: 60vh;
+    }
+
+    .heading{
+        order: 1;
+        margin-top: 0;
+    }
+
+    .heading h1{
+        font-size:4rem; 
+    }
+    
+   
+    
+}
